@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children's Health Pakistan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary: #4CAF50;
+            --primary-light: #81C784;
+            --primary-dark: #388E3C;
+            --white: #ffffff;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --text: #2c3e50;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        nav {
+            background: var(--white);
+            padding: 1.5rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(76, 175, 80, 0.95), rgba(56, 142, 60, 0.95));
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+        }
+
+        .stat-card {
+            background: var(--gray-100);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .initiatives {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-dark);
+        }
+
+        .initiative-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .initiative-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .initiative-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .initiative-content {
+            padding: 2rem;
+        }
+
+        .initiative-content h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+
+        #health-quiz {
+            max-width: 700px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: var(--gray-100);
+            border-radius: 12px;
+        }
+
+        .quiz-question {
+            margin-bottom: 2rem;
+        }
+
+        .quiz-options label {
+            display: block;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            background: var(--white);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .quiz-options label:hover {
+            background: var(--gray-200);
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .stat-card {
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#stats">Statistics</a></li>
+            <li><a href="#initiatives">Initiatives</a></li>
+            <li><a href="#quiz">Health Quiz</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div>
+            <h1>Building a Healthier Future for Pakistan's Children</h1>
+            <p>Join us in our mission to improve children's health across Pakistan through education, awareness, and community action.</p>
+        </div>
+    </section>
+
+    <section class="stats" id="stats">
+        <div class="stat-card">
+            <div class="stat-number" id="malnutrition-stat">0</div>
+            <p>Children Affected by Malnutrition</p>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="vaccination-stat">0</div>
+            <p>Vaccination Coverage (%)</p>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="healthcare-stat">0</div>
+            <p>Healthcare Facilities</p>
+        </div>
+    </section>
+
+    <section class="initiatives" id="initiatives">
+        <h2 class="section-title">Our Key Initiatives</h2>
+        <div class="initiative-grid">
+            <div class="initiative-card">
+                <img src="/api/placeholder/400/200" alt="Nutrition Program">
+                <div class="initiative-content">
+                    <h3>Nutrition Program</h3>
+                    <p>Providing essential nutrients and education to combat malnutrition in children under 5.</p>
+                </div>
+            </div>
+            <div class="initiative-card">
+                <img src="/api/placeholder/400/200" alt="Vaccination Drive">
+                <div class="initiative-content">
+                    <h3>Vaccination Drive</h3>
+                    <p>Ensuring all children receive vital immunizations to prevent deadly diseases.</p>
+                </div>
+            </div>
+            <div class="initiative-card">
+                <img src="/api/placeholder/400/200" alt="Health Education">
+                <div class="initiative-content">
+                    <h3>Health Education</h3>
+                    <p>Teaching parents and communities about child health, hygiene, and nutrition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Make a Difference Today</h2>
+        <p>Your support can help us reach more children across Pakistan</p>
+        <a href="#contact" class="cta-button">Join Our Cause</a>
+    </section>
+
+    <section id="quiz">
+        <div id="health-quiz">
+            <h2>Test Your Knowledge</h2>
+            <div class="quiz-question">
+                <p>What is the recommended duration for exclusive breastfeeding?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1" value="a"> 3 months</label>
+                    <label><input type="radio" name="q1" value="b"> 6 months</label>
+                    <label><input type="radio" name="q1" value="c"> 9 months</label>
+                </div>
+            </div>
+            <button onclick="checkQuiz()" class="cta-button">Submit Answer</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Children's Health Pakistan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function animateNumber(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    clearInterval(timer);
+                    start = target;
+                }
+                element.textContent = Math.floor(start).toLocaleString();
+            }, 16);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'malnutrition-stat') {
+                        animateNumber(entry.target, 40000, 2000);
+                    } else if (entry.target.id === 'vaccination-stat') {
+                        animateNumber(entry.target, 75, 2000);
+                    } else if (entry.target.id === 'healthcare-stat') {
+                        animateNumber(entry.target, 1200, 2000);
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            observer.observe(stat);
+        });
+
+        function checkQuiz() {
+            const answer = document.querySelector('input[name="q1"]:checked');
+            if (!answer) {
+                alert('Please select an answer!');
+                return;
+            }
+            if (answer.value === 'b') {
+                alert('Correct! Exclusive breastfeeding is recommended for the first 6 months of life.');
+            } else {
+                alert('Incorrect. The WHO recommends exclusive breastfeeding for the first 6 months of life.');
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
