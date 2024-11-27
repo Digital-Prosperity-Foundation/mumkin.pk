@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mughal Futures Lab - Where Legacy Meets Innovation</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
-    <nav class="bg-indigo-900 text-white p-4">
+    <nav class="bg-indigo-900 text-white p-4 fixed w-full z-10 top-0">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">Mughal Futures Lab</h1>
             <div class="hidden md:flex space-x-4">
@@ -20,7 +32,7 @@
         </div>
     </nav>
 
-    <header class="bg-indigo-800 text-white py-20">
+    <header class="bg-indigo-800 text-white py-20 mt-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl md:text-6xl font-bold mb-4">Where Legacy Meets Innovation</h2>
             <p class="text-xl md:text-2xl mb-8">Exploring the frontiers of AI and technology with a rich heritage of innovation</p>
@@ -29,7 +41,7 @@
     </header>
 
     <main class="container mx-auto px-4 py-12">
-        <section id="about" class="mb-20">
+        <section id="about" class="mb-20 scroll-mt-20">
             <h3 class="text-3xl font-bold mb-8 text-indigo-900 text-center">Our Story</h3>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -45,20 +57,20 @@
             </div>
         </section>
 
-        <section id="mission" class="mb-20">
+        <section id="mission" class="mb-20 scroll-mt-20">
             <h3 class="text-3xl font-bold mb-8 text-indigo-900 text-center">Our Mission</h3>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                     <i class="fas fa-lightbulb text-4xl text-indigo-600 mb-4"></i>
                     <h4 class="text-xl font-bold mb-4 text-indigo-800">Explore & Master</h4>
                     <p class="text-gray-700">Discover and harness emerging technologies to create innovative solutions for global challenges.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                     <i class="fas fa-users text-4xl text-indigo-600 mb-4"></i>
                     <h4 class="text-xl font-bold mb-4 text-indigo-800">Collaborate & Grow</h4>
                     <p class="text-gray-700">Foster a supportive environment where family members can learn, share, and grow together.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                     <i class="fas fa-globe text-4xl text-indigo-600 mb-4"></i>
                     <h4 class="text-xl font-bold mb-4 text-indigo-800">Impact & Legacy</h4>
                     <p class="text-gray-700">Create lasting positive change in our communities while building a legacy for future generations.</p>
@@ -66,7 +78,7 @@
             </div>
         </section>
 
-        <section id="journey" class="mb-20">
+        <section id="journey" class="mb-20 scroll-mt-20">
             <h3 class="text-3xl font-bold mb-8 text-indigo-900 text-center">The Journey Ahead</h3>
             <div class="bg-white p-8 rounded-lg shadow-lg">
                 <div class="grid md:grid-cols-2 gap-8">
@@ -94,7 +106,7 @@
             </div>
         </section>
 
-        <section id="join" class="mb-20">
+        <section id="join" class="mb-20 scroll-mt-20">
             <h3 class="text-3xl font-bold mb-8 text-indigo-900 text-center">Join Our Journey</h3>
             <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
                 <form id="interestForm" class="space-y-4">
